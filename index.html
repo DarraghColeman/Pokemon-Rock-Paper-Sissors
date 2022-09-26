@@ -7,6 +7,8 @@
     <meta description="An alternative take on the Rock/Paper/Sissors/Lizard/Spock game using JavaScript">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- FONT AWESOME & GOOGLE FONTS -->
+    <link rel="stylesheet" href="http://use.fontawesome.com/release/v5.7.2/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -16,15 +18,75 @@
 </head>
 <body>
 
-    <div class="head-score">Head/Score</div>
-    <div class="game-area">Game Area
-        <img src="assets/images/bulbasaur2.png" alt="">
-        <img src="assets/images/charmander.png" alt="">
-        <img src="assets/images/diglett3.jpg" alt="">
-        <img src="assets/images/geodude.png" alt="">
-        <img src="assets/images/jynx2.png" alt="">
+    <!-- TITLE SECTION -->
+    <section class="title-block">
+        <div>
+            <ul>Rock</ul>
+            <ul>Paper</ul>
+            <ul>Sissors</ul>
+            <ul>Lizard</ul>
+            <ul>Spock</ul>
+        </div>
+        <div>
+            <ul>Fire</ul>
+            <ul>Grass</ul>
+            <ul>Rock</ul>
+            <ul>Ice</ul>
+            <ul>Ground</ul>
+        </div>
+        <div class="score">
+            <div class="score-title">Score</div>
+            <div class="score-count">6</div>
+        </div>
+    </section>
+
+    <!-- GAME AREA -->
+    <section class="game-area">
+        <div class="game-card fire">
+            <img src="assets/images/charmander.png" alt="">
+        </div>
+        <div class="game-card grass">
+            <img src="assets/images/bulbasaur2.png" alt="">
+        </div>
+        <div class="game-card rock">    
+            <img src="assets/images/geodude.jpg" alt="">
+        </div>
+        <div class="game-card ice">
+            <img src="assets/images/jynx2.png" alt="">
+        </div>
+        <div class="game-card ground">  
+            <img src="assets/images/diglett3.jpg" alt="">
+        </div>
+    </section>
+
+    <div class="section picked hidden">
+        <div class="choice">
+            <p>You picked</p>
+            <div class="user-pick"></div>
+        </div>
+        <div class="result hidden">
+            <div class="title">You Lose</div>
+            <button>Play Again</button>
+        </div>
+        <div class="choice">
+            <p>The house picked</p>
+            <div class="ai-pick"></div>
+        </div>
     </div>
-    <div class="rules">Rules</div>
+
+
+    <button class="rules-btn">Rules</button>
+
+    <div class="modal-bg"></div>
+    <div class="modal">
+        <span class="close">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <title>Rules</title>
+        <div class="content">
+            <img src="assets/images/rules.webp" alt="">
+        </div>
+    </div>
     
     <script src="assets/js/script.js"></script>
 </body>
