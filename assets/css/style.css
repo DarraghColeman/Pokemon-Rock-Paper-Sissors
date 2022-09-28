@@ -134,6 +134,56 @@ right: 170px;
     left: 115px;
 }
 
+/* PICKED SECTION */
+.picked {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.picked p {
+    font-size: 23px;
+    line-height: 1;
+    margin: 0 0 66px;
+}
+
+.picked .game-card {
+    position: static;
+    height: 300px;
+    width: 300px;
+}
+
+.choice {
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+/* RESULT BLOCK */
+.result {
+    white-space: nowrap;
+    font-size: 30px;
+}
+
+.result .title {
+    margin: 53px 0 17px;
+    font-size: 58px;
+    line-height: 1;
+}
+
+.result button {
+    border: 1px solid hsl(217, 16%, 50%);
+    padding: 15px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to left, #fff 50%, transparent 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .3s ease-out, color .3 ease-out;
+}
+
 /* RULES */
 .modal-bg {
     display: none;
