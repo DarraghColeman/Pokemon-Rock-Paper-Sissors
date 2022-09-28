@@ -9,13 +9,13 @@ function game() {
     const pcPickElement = document.querySelector('.pc-pick');
     const resultElement = document.querySelector('.result');
     const resultTitleElement = resultElement.querySelector('.title');
-    const scoreCountElement = resultElement.querySelector('.score-count');
+    const scoreCountElement = document.querySelector('.score-count');
 
 
     let currentScore = null;
 
     window.addEventListener('load', () => {
-
+        retrrieveScoreFromLocalStorage();
 
         document.querySelectorAll('.user-choice .game-card').forEach(card => {
             card.addEventListener('click', (ev) => {
@@ -103,6 +103,27 @@ function game() {
     function updateScoreBoard() {
         scoreCountElement.innerText = currentScore;
         window.localStorage.setItem('gameScore', currentScore);
+    }
+
+    // MODAL
+    const rulesBtn = document.querySelector('.rules-btn');
+    const modalBg = document.querySelector('.modal-bg');
+    const modal = document.querySelector('.modal');
+
+    rulesBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalBg.classList.add('active');
+    });
+
+    modalBg.addEventListener('click', (event) =>{
+
+    })
+
+    document.querySelector('.close').addEventListener('click', hideModal);
+
+    function hideModal() {
+        modal.classList.remove('active');
+        modalBg.classList.remove('active');
     }
 }
 
