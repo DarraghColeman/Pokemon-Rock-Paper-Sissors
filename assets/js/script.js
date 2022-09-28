@@ -9,8 +9,10 @@ function game() {
     const pcPickElement = document.querySelector('.pc-pick');
     const resultElement = document.querySelector('.result');
     const resultTitleElement = resultElement.querySelector('.title');
+    const scoreCountElement = resultElement.querySelector('.score-count');
 
 
+    let currentScore = null;
 
     window.addEventListener('load', () => {
 
@@ -55,8 +57,10 @@ function game() {
             resultTitleElement.innerText = 'Tie!';
         } else if (getUserWinsStatus(user + comp)) {
             resultTitleElement.innerText = 'You win!';
+            calculateScore(1);
         } else {
             resultTitleElement.innerText = 'You lose!';
+            calculateScore(-1);
         }
     }
 
@@ -83,6 +87,22 @@ function game() {
     function clearResultBeforeAppend() {
         userPickElement.innerHTML = '';
         pcPickElement.innerHTML = '';
+    }
+
+    function calculateScore(roundResult) {
+        currentScore += roundResult;
+        updateScoreBoard();
+    }
+
+    function retrrieveScoreFromLocalStorage() {
+        const score = +window.localStorage.getItem('gameScore') 0;
+        currentScore = score;
+        updateScoreBoard();
+    }
+
+    function updateScoreBoard() {
+        scoreCountElement.innerText = currentScore;
+        window.localStorage.setItem('gameScore', currentScore);
     }
 }
 
