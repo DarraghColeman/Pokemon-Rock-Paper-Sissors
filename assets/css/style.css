@@ -152,7 +152,16 @@ right: 170px;
 .picked .game-card {
     position: static;
     height: 300px;
-    width: 300px;
+    width: 295px;
+}
+
+.picked .game-card:before {
+    width: 230px;
+    height: 221px;
+}
+
+.picked .game-card img {
+    width: 100px;
 }
 
 .choice {
@@ -182,6 +191,12 @@ right: 170px;
     background-size: 250% 100%;
     background-position: right bottom;
     transition: background-position .3s ease-out, color .3 ease-out;
+    text-transform: uppercase;
+}
+
+.result button:hover {
+    background-position: left bottom;
+    color: #fff;
 }
 
 /* RULES */
@@ -250,4 +265,25 @@ right: 170px;
 .rules-btn:hover {
     background-position: left bottom;
     color: hsl(214, 47%, 23%);
+}
+
+@media only screen and (max-width:1366px){
+    
+    .picked .game-card {
+        width: 145px;
+        height: 150px;
+    }
+
+    .picked .game-card img {
+        width: 55px;
+    }
+    
+    .picked .game-card:before {
+        width: 115px;
+        height: 115px;
+    }
+
+    .result .title {
+        font-size: 40px;
+    }
 }
