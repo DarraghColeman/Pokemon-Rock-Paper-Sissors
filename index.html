@@ -18,76 +18,71 @@
 </head>
 <body>
 
-    <!-- TITLE SECTION -->
-    <section class="title-block">
-        <!--<div>
-            <ul>Rock</ul>
-            <ul>Paper</ul>
-            <ul>Sissors</ul>
-            <ul>Lizard</ul>
-            <ul>Spock</ul>
-        </div>-->
-        <div>
-            <ul>Fire</ul>
-            <ul>Grass</ul>
-            <ul>Rock</ul>
-            <ul>Ice</ul>
-            <ul>Ground</ul>
-        </div>
-        <div class="score">
-            <div class="score-title">Score</div>
-            <div class="score-count">6</div>
-        </div>
-    </section>
+    <div class="flex-column main-container">
 
-    <!-- GAME AREA -->
-    <section class="user-choice">
-        <div class="game-card fire">
-            <img src="assets/images/charmanderCircle2.png" alt="">
-        </div>
-        <div class="game-card grass">
-            <img src="assets/images/bulbasaurCircle2.png" alt="">
-        </div>
-        <div class="game-card rock">    
-            <img src="assets/images/geodudeCircle2.png" alt="">
-        </div>
-        <div class="game-card ice">
-            <img src="assets/images/jynxCircle2.png" alt="">
-        </div>
-        <div class="game-card ground">  
-            <img src="assets/images/diglettCircle2.png" alt="">
-        </div>
-    </section>
+        <!-- TITLE SECTION -->
+        <section class="title-block flex-row">
+            <div>
+                <ul>Fire</ul>
+                <ul>Grass</ul>
+                <ul>Rock</ul>
+                <ul>Ice</ul>
+                <ul>Ground</ul>
+            </div>
+            <div class="score flex-column">
+                <div class="score-title">Score</div>
+                <div class="score-count"></div>
+            </div>
+        </section>
 
-    <div class="section picked flex-row hidden">
-        <div class="choice">
-            <p>You picked</p>
-            <div class="user-pick"></div>
+        <!-- GAME AREA -->
+        <section class="user-choice">
+            <div class="game-card fire">
+                <img src="assets/images/charmanderCircle2.png" alt="">
+            </div>
+            <div class="game-card grass">
+                <img src="assets/images/bulbasaurCircle2.png" alt="">
+            </div>
+            <div class="game-card rock">    
+                <img src="assets/images/geodudeCircle2.png" alt="">
+            </div>
+            <div class="game-card ice">
+                <img src="assets/images/jynxCircle2.png" alt="">
+            </div>
+            <div class="game-card ground">  
+                <img src="assets/images/diglettCircle2.png" alt="">
+            </div>
+        </section>
+
+        <div class="section picked flex-row hidden">
+            <div class="choice flex-column">
+                <p>You picked</p>
+                <div class="user-pick"></div>
+            </div>
+            <div class="result">
+                <div class="title">You Lose</div>
+                <button>Play Again</button>
+            </div>
+            <div class="choice flex-column">
+                <p>The house picked</p>
+                <div class="pc-pick"></div>
+            </div>
         </div>
-        <div class="result">
-            <div class="title">You Lose</div>
-            <button>Play Again</button>
-        </div>
-        <div class="choice flex-column">
-            <p>The house picked</p>
-            <div class="pc-pick"></div>
+
+
+        <button class="rules-btn">Rules</button>
+
+        <div class="modal-bg"></div>
+        <div class="modal">
+            <span class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+            <div class="title">Rules</div>
+            <div class="content">
+                <img src="assets/images/rules.webp" alt="">
+            </div>
         </div>
     </div>
-
-
-    <button class="rules-btn">Rules</button>
-
-    <div class="modal-bg"></div>
-    <div class="modal">
-        <span class="close">
-            <i class="fa-solid fa-xmark"></i>
-        </span>
-        <div class="div title">Rules</div>
-        <div class="content">
-            <img src="assets/images/rules.webp" alt="">
-        </div>
-    </div>
-    
     <script src="assets/js/script.js"></script>
 </body>
 </html>
