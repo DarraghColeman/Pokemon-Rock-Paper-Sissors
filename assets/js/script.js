@@ -4,8 +4,8 @@ function game() {
     let userChoice = '';
     let compChoice = '';
     const userChoiceElement = document.querySelector('.user-choice');
-    const pickedElement = document.querySelector('.user-pick');
-    const userPickElement = document.querySelector('.picked');
+    const pickedElement = document.querySelector('.picked');
+    const userPickElement = document.querySelector('.user-pick');
     const pcPickElement = document.querySelector('.pc-pick');
     const resultElement = document.querySelector('.result');
     const resultTitleElement = resultElement.querySelector('.title');
@@ -14,8 +14,9 @@ function game() {
 
     let currentScore = null;
 
+    // EVENT LISTENER FOR GAME START
     window.addEventListener('load', () => {
-        retrrieveScoreFromLocalStorage();
+        retrieveScoreFromLocalStorage();
 
         document.querySelectorAll('.user-choice .game-card').forEach(card => {
             card.addEventListener('click', (ev) => {
@@ -30,6 +31,7 @@ function game() {
 
     })
 
+    // GAME FUNCTIONS
     function startGame() {
         calculateWinner(userChoice, compChoice);
         userChoiceElement.classList.add('hidden');
@@ -41,13 +43,13 @@ function game() {
     }
 
     function getUserChoice(target) {
-        console.log(target);
         if (target.nodeName === 'IMG') {
             return target.parentElement.classList[1];
         }
         return target.classList[1];
     }
 
+    //RESULT CALCULATIONS
     function getComputerChoice() {
         return actions[Math.floor(Math.random() * 5)];
     }
@@ -68,8 +70,8 @@ function game() {
         return userWinResults.some(winStr => winStr === result);
     }
 
-    function buildChoiceElement(userElement, className) {
-        let el = document.createdElement('div');
+    function buildChoiceElement(isItUserElement, className) {
+        const el = document.createdElement('div');
         el.classList = [`game-card ${className}`];
         el.innerHTML = `<img src="assets/images/${className}.png" alt="${classame}">`
         if (isItUserElement) {
@@ -89,13 +91,15 @@ function game() {
         pcPickElement.innerHTML = '';
     }
 
+    //SCORE CALCULATION & STORAGE
     function calculateScore(roundResult) {
         currentScore += roundResult;
         updateScoreBoard();
     }
 
-    function retrrieveScoreFromLocalStorage() {
-        const score = +window.localStorage.getItem('gameScore') 0;
+    //LOCAL STORAGE SCORE: Option can be removed
+    function retrieveScoreFromLocalStorage() {
+        const score = +window.localStorage.getItem('gameScore') || 0;
         currentScore = score;
         updateScoreBoard();
     }
@@ -105,7 +109,7 @@ function game() {
         window.localStorage.setItem('gameScore', currentScore);
     }
 
-    // MODAL
+    // MODAL: For "Rules" pop-up window
     const rulesBtn = document.querySelector('.rules-btn');
     const modalBg = document.querySelector('.modal-bg');
     const modal = document.querySelector('.modal');
@@ -116,8 +120,10 @@ function game() {
     });
 
     modalBg.addEventListener('click', (event) =>{
-
-    })
+        if (event.targer === modalBg) {
+            hideModal();
+        }
+    });
 
     document.querySelector('.close').addEventListener('click', hideModal);
 
