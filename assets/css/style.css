@@ -205,7 +205,7 @@ right: 170px;
     align-items: center;
 }
 
-/* RESULT BLOCK */
+/* RESULT */
 .result {
     white-space: nowrap;
     font-size: 30px;
@@ -266,8 +266,10 @@ right: 170px;
 }
 
 .modal .close {
+    width: 15px;
     position: absolute;
     right: 30px;
+    top: 30px;
     cursor: pointer;
 }
 

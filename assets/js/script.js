@@ -73,7 +73,7 @@ function game() {
     function buildChoiceElement(isItUserElement, className) {
         const el = document.createdElement('div');
         el.classList = [`game-card ${className}`];
-        el.innerHTML = `<img src="assets/images/${className}.png" alt="${classame}">`
+        el.innerHTML = `<img src="assets/images/${className}.png" alt="${className}">`
         if (isItUserElement) {
             userPickElement.append(el);
         } else {
